@@ -63,4 +63,23 @@ function createCar(make, model, color) {
 
 
 
-///////
+
+/////// Object Oriented Password Checker
+/// Username has to have a length longer than 6 and has to include a $ or #.
+/// Password has to have a length longer than 6 and has to include a $ or #.
+var userID = "ashley11!"
+var password = "ashley11!"
+
+function isUserIdValid(str) { return str.length > 6 && !str.includes("#") || !str.includes("$"); }
+
+
+function isPasswordValid(str) { return str.length > 6 && (str.includes("#") || str.includes("$")) };
+
+function areCredentialsValid(id, pass) { return isUserIdValid(id) && isPasswordValid(pass); }
+
+
+function getUserCredentials() {
+  var id = prompt("Enter user ID");
+  var pass = prompt("Enter password");
+  alert("Your credentials are valid: " + areCredentialsValid(id, pass));
+}
